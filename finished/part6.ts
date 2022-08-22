@@ -108,9 +108,52 @@ import {
 // //   },
 // // });
 // // egghead.notify('Hello! Can you hear me?');
+// // 注意不要直接将方法传入,避免this出错,也可以使用bind
 // fromEventPattern(
-//   // 注意不要直接将方法传入,避免this出错,也可以使用bind
 //   egghead.addListener.bind(egghead),
 //   egghead.removeListener.bind(egghead)
 // ).subscribe(console.log);
 
+// 有点类似于0,好像没什么用,但是有些时候很重要
+// empty会给一个空的Observable,订阅之后立刻传出complete
+// empty().subscribe({
+//   next: function (value) {
+//     console.log(value);
+//   },
+//   complete: function () {
+//     console.log('complete!');
+//   },
+//   error: function (error) {
+//     console.log(error);
+//   },
+// });
+
+// never会给一个无穷的observable,永远等不到他结束
+// never().subscribe({
+//   next: function (value) {
+//     console.log(value);
+//   },
+//   complete: function () {
+//     console.log('complete');
+//   },
+// });
+
+// 抛出错误
+// throwError('Error').subscribe({
+//   next: function (value) {
+//     console.log(value);
+//   },
+//   complete: function () {
+//     console.log('complete!');
+//   },
+//   error: function (error) {
+//     console.log('Throw Error: ' + error);
+//   },
+// });
+
+// interval持续方出一个数
+// interval(1000).subscribe({
+//   next: function (value) {
+//     console.log(value);
+//   },
+// });
