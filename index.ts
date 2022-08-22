@@ -1,5 +1,6 @@
 import './style.css';
 import './finished/part5.ts';
+import './finished/part6.ts';
 
 import { of, map, Observable, observable } from 'rxjs';
 
