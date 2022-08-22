@@ -157,3 +157,40 @@ import {
 //     console.log(value);
 //   },
 // });
+
+// timer有两个参数参与,第一个代表第一个值等待的时间,第二个代表第一次之后发送的值的间隔时间
+// timer(1000, 5000).subscribe({
+//   next: function (value) {
+//     console.log(value);
+//   },
+//   complete: function () {
+//     console.log('complete');
+//   },
+// });
+
+// timer的第一个参数除了是Number之外,也可以是日期,等到指定的时间再发送第一个值
+// timer也可以只接受一个参数,等待一秒送出0的时候同时结束
+// timer(1000).subscribe({
+//   next: function (value) {
+//     console.log(value);
+//   },
+//   complete: function () {
+//     console.log('complete');
+//   },
+// });
+
+// var subscription = timer(1000, 1000).subscribe({
+//   next: function (value) {
+//     console.log(value);
+//   },
+//   complete: function () {
+//     console.log('complete!');
+//   },
+//   error: function (error) {
+//     console.log('Throw Error: ' + error);
+//   },
+// });
+// setTimeout(() => {
+//   subscription.unsubscribe(); // 停止訂閱(退訂)， RxJS 4.x 以前的版本用 dispose()
+//   console.log('unsubscrible退订,释放资源');
+// }, 5000);
